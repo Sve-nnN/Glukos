@@ -25,7 +25,6 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 0;
-  padding: var(--spacing-medium);
 }
 
 h1,
@@ -341,10 +340,60 @@ section {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+/*make odd containers darker*/
+.container:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+.container.green {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: var(--spacing-small) var(--spacing-medium);
+  text-align: center;
+}
 i {
   font-size: 2.5rem;
   color: var(--color-text);
   transition: color 0.3s ease;
   margin-bottom: 1em;
 }
-/* TODO: Falta hacer un form*/
+.social {
+  font-size: 1.5em;
+}
+
+.cta.bg-white {
+  background-color: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  margin: 0 auto;
+  max-width: 50%;
+  flex: auto;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: var(--spacing-small);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+.contact-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  max-width: 300px;
+  margin-left: var(--spacing-medium);
+}
+.contact-form-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-medium);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-large);
+}
