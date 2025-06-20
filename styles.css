@@ -1,5 +1,5 @@
 /* ===============================
-   VARIABLES Y CONFIGURACIÓN GLOBAL
+   VARIABLES AND CONFIGURATION
    =============================== */
 :root {
   --color-primary: #1a73e8;
@@ -19,7 +19,7 @@
 }
 
 /* ===============================
-   ESTILOS BASE
+   BASE STYLES
    =============================== */
 * {
   box-sizing: border-box;
@@ -31,7 +31,6 @@ body {
   font-size: var(--font-size-base);
   color: var(--color-text);
   background-color: var(--color-background);
-  position: relative;
 }
 
 h1, h2, h3 {
@@ -66,13 +65,8 @@ a:hover {
 }
 
 /* ===============================
-   COMPONENTES
+   BUTTONS & LINKS
    =============================== */
-.logo {
-  width: 50px;
-  height: auto;
-}
-
 .cta {
   background-color: var(--color-secondary);
   color: #fff;
@@ -97,9 +91,9 @@ a:hover {
 }
 
 /* ===============================
-   NAVEGACIÓN
+   NAVIGATION
    =============================== */
-nav {
+.navbar {
   position: sticky;
   top: 0;
   display: flex;
@@ -110,32 +104,21 @@ nav {
   border-bottom: 1px solid var(--color-border);
 }
 
-nav > ul {
+.nav-menu {
   list-style: none;
-  display: none;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 4px;
+  gap: var(--spacing-medium);
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
-nav > ul.active {
-  display: flex;
+.nav-menu li {
+  margin: 0;
 }
 
-nav > ul > li {
-  margin-bottom: var(--spacing-medium);
-  width: 100%;
-  text-align: center;
-}
-
-nav > ul > li:last-child {
-  margin-bottom: 0;
-}
-
-nav > ul > li > a {
+.nav-menu li a {
   color: var(--color-text);
   font-weight: bold;
   padding: var(--spacing-small) var(--spacing-medium);
@@ -143,7 +126,7 @@ nav > ul > li > a {
 }
 
 /* ===============================
-   HERO
+   HERO SECTION
    =============================== */
 .hero {
   display: flex;
@@ -152,6 +135,7 @@ nav > ul > li > a {
   text-align: center;
   border-radius: var(--border-radius);
   gap: var(--spacing-medium);
+  padding: var(--spacing-large) var(--spacing-medium);
 }
 
 .hero-image {
@@ -160,100 +144,99 @@ nav > ul > li > a {
   border-radius: var(--border-radius);
 }
 
-.hero > div {
+.hero-text {
   display: flex;
   flex-direction: column;
 }
 
 /* ===============================
-   SECCIONES Y TARJETAS
+   HIGHLIGHT SECTION
    =============================== */
-section {
-  max-width: 960px;
-  margin: 0 auto var(--spacing-large);
-  padding: var(--spacing-medium) 0;
+.highlight-section {
+  padding: var(--spacing-large) 0;
+}
+
+.highlights {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  overflow: hidden;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-medium);
-}
-
-.cards {
-  display: flex;
   gap: var(--spacing-medium);
 }
 
-.card > .number {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: var(--spacing-small);
+.green-bg {
+  background-color: var(--color-secondary);
+  color: #fff;
+  text-align: center;
+  padding: var(--spacing-large) var(--spacing-medium);
 }
 
-.card > .text-number {
+.label {
   font-size: 1rem;
 }
 
-.numbers {
+.value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ===============================
+   GENERIC CARD STYLES
+   =============================== */
+.cards {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
   gap: var(--spacing-medium);
+  margin-top: var(--spacing-medium);
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
   padding: var(--spacing-medium);
+  text-align: left;
 }
 
-.testimonios {
+/* ===============================
+   TESTIMONIALS
+   =============================== */
+.testimonial-cards {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
-  align-items: center;
+  margin-top: var(--spacing-medium);
 }
 
-.testimonio {
+.testimonial {
   background-color: var(--color-border);
   border-radius: var(--border-radius);
   padding: var(--spacing-medium);
-  max-width: 300px;
-  width: 100%;
   text-align: center;
 }
 
 /* ===============================
-   CONTACTO
+   CONTACT SECTION
    =============================== */
-.contact-form-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: var(--spacing-medium);
+.contact-section {
   background-color: var(--color-background);
   border-radius: var(--border-radius);
-  margin-top: var(--spacing-large);
+  padding: var(--spacing-large) var(--spacing-medium);
 }
 
-.contact-aside {
+.contact-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-medium);
+  gap: var(--spacing-large);
+}
+
+.contact-info {
   max-width: 300px;
-  margin-left: var(--spacing-medium);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
-  max-width: 50%;
-  flex: auto;
+  max-width: 100%;
 }
 
 .contact-form input,
@@ -265,13 +248,29 @@ section {
 }
 
 /* ===============================
-   ICONOS
+   FOOTER
    =============================== */
-i {
-  font-size: 2.5rem;
-  color: var(--color-text);
-  margin-bottom: 1em;
-  transition: color 0.3s ease;
+.footer {
+  background-color: var(--color-background);
+  padding: var(--spacing-medium);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-medium);
+  padding: 0;
+  margin: var(--spacing-small) 0;
+}
+
+.social-media li {
+  list-style: none;
 }
 
 .social {
@@ -279,55 +278,17 @@ i {
 }
 
 /* ===============================
-   FOOTER
+   ICONS
    =============================== */
-footer {
-  background-color: var(--color-background);
-  padding: var(--spacing-medium);
-  text-align: center;
-  border-top: 1px solid var(--color-border);
-}
-
-footer > p {
-  margin: 0;
-}
-
-footer a {
-  color: var(--color-primary);
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-.social-media {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-medium);
-  margin: var(--spacing-small) 0;
-  padding: 0;
-}
-
-.social-media li {
-  list-style: none;
+i {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+  margin-bottom: 1em;
 }
 
 /* ===============================
-   UTILIDADES Y TEMAS
-   =============================== */
-.container:nth-child(odd) {
-  background-color: #f0f0f0;
-}
-
-.container.green {
-  background-color: var(--color-secondary);
-  color: #fff;
-  padding: var(--spacing-small) var(--spacing-medium);
-  text-align: center;
-}
-
-/* ===============================
-   ANIMACIONES
+   ANIMATIONS
    =============================== */
 @keyframes fadeIn {
   from {
@@ -338,28 +299,15 @@ footer a:hover {
   }
 }
 
+section {
+  animation: fadeIn 0.5s ease-in-out;
+  overflow: hidden;
+}
+
 /* ===============================
    RESPONSIVE DESIGN
    =============================== */
 @media (min-width: 768px) {
-  nav > ul {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    gap: 4px;
-    width: auto;
-  }
-
-  nav > ul > li {
-    margin: 0;
-    width: auto;
-    text-align: left;
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
   .hero {
     flex-direction: row;
     text-align: left;
@@ -369,22 +317,27 @@ footer a:hover {
     max-width: 100%;
   }
 
-  .numbers {
+  .highlights {
     flex-direction: row;
+    justify-content: space-around;
   }
 
-  .numbers > .card {
-    width: 25%;
-    flex-grow: 1;
+  .cards {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .testimonios {
+  .testimonial-cards {
     flex-direction: row;
     justify-content: center;
   }
 
-  section {
-    align-items: stretch;
-    justify-content: flex-start;
+  .contact-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-form {
+    max-width: 50%;
   }
 }
