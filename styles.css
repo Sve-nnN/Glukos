@@ -1,51 +1,45 @@
-/* ===============================
-   VARIABLES AND CONFIGURATION
-   =============================== */
+/* =========================
+   VARIABLES Y CONFIGURACIÓN
+   ========================= */
 :root {
   --color-primary: #1a73e8;
   --color-secondary: #34a853;
   --color-background: #fafafa;
   --color-text: #0f1417;
   --color-border: #ebedf2;
-
   --font-family: Inter, sans-serif;
   --font-size-base: 16px;
-
   --spacing-small: 0.5rem;
   --spacing-medium: 1rem;
   --spacing-large: 2rem;
-
   --border-radius: 8px;
 }
 
-/* ===============================
-   BASE STYLES
-   =============================== */
-* {
-  box-sizing: border-box;
-}
-
+/* =========================
+   ESTILOS BASE (MOBILE FIRST)
+   ========================= */
 body {
-  margin: 0;
+  position: relative;
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   color: var(--color-text);
   background-color: var(--color-background);
+  margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
-  margin: 0 0 var(--spacing-small);
+  margin: 0 0 var(--spacing-small) 0;
 }
 
 h1 {
   font-size: 2.5rem;
 }
-
 h2 {
   font-size: 2rem;
 }
-
 h3 {
   font-size: 1.5rem;
 }
@@ -64,9 +58,14 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ===============================
-   BUTTONS & LINKS
-   =============================== */
+/* =========================
+   ELEMENTOS COMUNES
+   ========================= */
+.logo {
+  width: 50px;
+  height: auto;
+}
+
 .cta {
   background-color: var(--color-secondary);
   color: #fff;
@@ -76,8 +75,8 @@ a:hover {
   cursor: pointer;
   font-weight: bold;
   text-align: center;
-  display: inline-block;
   transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .cta:hover {
@@ -90,9 +89,9 @@ a:hover {
   border: 1px solid var(--color-border);
 }
 
-/* ===============================
-   NAVIGATION
-   =============================== */
+/* =========================
+   NAVEGACIÓN RESPONSIVA
+   ========================= */
 .navbar {
   position: sticky;
   top: 0;
@@ -106,28 +105,66 @@ a:hover {
 
 .nav-menu {
   list-style: none;
-  display: flex;
-  flex-direction: row;
+  display: none;
+  flex-direction: column;
   align-items: center;
-  gap: var(--spacing-medium);
+  gap: 4px;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
-.nav-menu li {
-  margin: 0;
+.nav-menu.active {
+  display: flex;
 }
 
-.nav-menu li a {
+.nav-menu > li {
+  margin: 0 0 var(--spacing-medium) 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-menu > li:last-child {
+  margin-bottom: 0;
+}
+
+.nav-menu > li > a {
   color: var(--color-text);
   font-weight: bold;
+  text-decoration: none;
   padding: var(--spacing-small) var(--spacing-medium);
   display: block;
 }
 
-/* ===============================
-   HERO SECTION
-   =============================== */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-text);
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* =========================
+   SECCIONES Y CARDS
+   ========================= */
+section {
+  max-width: 960px;
+  margin: 0 auto var(--spacing-large) auto;
+  padding: var(--spacing-medium) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -135,7 +172,6 @@ a:hover {
   text-align: center;
   border-radius: var(--border-radius);
   gap: var(--spacing-medium);
-  padding: var(--spacing-large) var(--spacing-medium);
 }
 
 .hero-image {
@@ -144,99 +180,108 @@ a:hover {
   border-radius: var(--border-radius);
 }
 
-.hero-text {
+.hero > div {
   display: flex;
   flex-direction: column;
 }
 
-/* ===============================
-   HIGHLIGHT SECTION
-   =============================== */
-.highlight-section {
-  padding: var(--spacing-large) 0;
-}
-
-.highlights {
+.numbers {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: var(--spacing-medium);
   gap: var(--spacing-medium);
 }
 
-.green-bg {
-  background-color: var(--color-secondary);
-  color: #fff;
-  text-align: center;
-  padding: var(--spacing-large) var(--spacing-medium);
+.numbers > .card {
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
 }
 
-.label {
-  font-size: 1rem;
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-medium);
+  background: #fff;
 }
 
-.value {
+.card > .number {
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-small);
 }
 
-/* ===============================
-   GENERIC CARD STYLES
-   =============================== */
+.card > .text-number {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
 .cards {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
-  margin-top: var(--spacing-medium);
 }
 
-.card {
-  background-color: #fff;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
-  padding: var(--spacing-medium);
-  text-align: left;
+.testimonios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
 }
 
-/* ===============================
-   TESTIMONIALS
-   =============================== */
+.testimonios-section {
+  /* Estilos específicos si se requieren */
+}
+
 .testimonial-cards {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
-  margin-top: var(--spacing-medium);
 }
 
-.testimonial {
+.testimonio {
   background-color: var(--color-border);
   border-radius: var(--border-radius);
   padding: var(--spacing-medium);
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
   text-align: center;
 }
 
-/* ===============================
-   CONTACT SECTION
-   =============================== */
-.contact-section {
+/* =========================
+   CONTACTO
+   ========================= */
+.contact-form-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-medium);
   background-color: var(--color-background);
   border-radius: var(--border-radius);
-  padding: var(--spacing-large) var(--spacing-medium);
+  margin-top: var(--spacing-large);
 }
 
-.contact-container {
+.contact-aside {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-large);
-}
-
-.contact-info {
+  gap: var(--spacing-medium);
   max-width: 300px;
+  margin-left: var(--spacing-medium);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-medium);
-  max-width: 100%;
+  margin: 0 auto;
+  max-width: 50%;
+  flex: auto;
 }
 
 .contact-form input,
@@ -247,9 +292,9 @@ a:hover {
   font-size: 1rem;
 }
 
-/* ===============================
-   FOOTER
-   =============================== */
+/* =========================
+   FOOTER Y REDES SOCIALES
+   ========================= */
 .footer {
   background-color: var(--color-background);
   padding: var(--spacing-medium);
@@ -257,8 +302,18 @@ a:hover {
   border-top: 1px solid var(--color-border);
 }
 
-.footer p {
+.footer > p {
   margin: 0;
+  color: var(--color-text);
+}
+
+.footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .social-media {
@@ -269,7 +324,7 @@ a:hover {
   margin: var(--spacing-small) 0;
 }
 
-.social-media li {
+.social-media > li {
   list-style: none;
 }
 
@@ -277,9 +332,9 @@ a:hover {
   font-size: 1.5em;
 }
 
-/* ===============================
-   ICONS
-   =============================== */
+/* =========================
+   ICONOS
+   ========================= */
 i {
   font-size: 2.5rem;
   color: var(--color-text);
@@ -287,27 +342,28 @@ i {
   margin-bottom: 1em;
 }
 
-/* ===============================
-   ANIMATIONS
-   =============================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-section {
-  animation: fadeIn 0.5s ease-in-out;
-  overflow: hidden;
-}
-
-/* ===============================
-   RESPONSIVE DESIGN
-   =============================== */
+/* =========================
+   MEDIA QUERIES (DESKTOP)
+   ========================= */
 @media (min-width: 768px) {
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+  }
+
+  .nav-menu > li {
+    margin: 0;
+    width: auto;
+    text-align: left;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
   .hero {
     flex-direction: row;
     text-align: left;
@@ -317,14 +373,22 @@ section {
     max-width: 100%;
   }
 
-  .highlights {
+  .numbers {
     flex-direction: row;
-    justify-content: space-around;
+  }
+
+  .numbers > .card {
+    width: 25%;
+    flex-grow: 1;
   }
 
   .cards {
     flex-direction: row;
-    justify-content: space-between;
+  }
+
+  .testimonios {
+    flex-direction: row;
+    justify-content: center;
   }
 
   .testimonial-cards {
@@ -332,12 +396,30 @@ section {
     justify-content: center;
   }
 
-  .contact-container {
+  .contact-form-section {
     flex-direction: row;
-    justify-content: space-between;
   }
+}
 
-  .contact-form {
-    max-width: 50%;
+/* =========================
+   OTROS
+   ========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+.container:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+
+.container.green {
+  background-color: var(--color-secondary);
+  color: #fff;
+  padding: var(--spacing-small) var(--spacing-medium);
+  text-align: center;
 }
