@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Glukos - Cuida tu salud</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
     <script src="https://kit.fontawesome.com/85acccb858.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -119,31 +120,34 @@
           </div>
         </section>
       </div>
-
       <div class="container">
         <section class="testimonios-section">
           <h2>Testimonios de usuarios</h2>
           <p>Descubre cómo Glukos ha transformado la vida de nuestros usuarios.</p>
-          <div class="testimonios">
-            <div class="testimonio">
-              <i class="fa-solid fa-user"></i>
-              <p>"Glukos ha cambiado mi vida. Puedo monitorear mi salud de manera fácil y efectiva."</p>
-              <p>- Juan Pérez, Paciente</p>
-            </div>
-            <div class="testimonio">
-              <i class="fa-solid fa-user"></i>
-              <p>"Las alertas personalizadas me han ayudado a mantenerme en el camino correcto."</p>
-              <p>- María López, Doctor</p>
-            </div>
-            <div class="testimonio">
-              <i class="fa-solid fa-user"></i>
-              <p>"La comunidad de Glukos es increíble. He encontrado apoyo y consejos valiosos."</p>
-              <p>- Carlos García, Paciente</p>
-            </div>
-            <div class="testimonio">
-              <i class="fa-solid fa-user"></i>
-              <p>"La consulta con doctores a través de la app es muy conveniente y útil."</p>
-              <p>- Ana Martínez, Paciente</p>
+          <div class="testimonios splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide testimonio">
+                  <i class="fa-solid fa-user"></i>
+                  <p>"Glukos ha cambiado mi vida. Puedo monitorear mi salud de manera fácil y efectiva."</p>
+                  <p>- Juan Pérez, Paciente</p>
+                </li>
+                <li class="splide__slide testimonio">
+                  <i class="fa-solid fa-user"></i>
+                  <p>"Las alertas personalizadas me han ayudado a mantenerme en el camino correcto."</p>
+                  <p>- María López, Doctor</p>
+                </li>
+                <li class="splide__slide testimonio">
+                  <i class="fa-solid fa-user"></i>
+                  <p>"La comunidad de Glukos es increíble. He encontrado apoyo y consejos valiosos."</p>
+                  <p>- Carlos García, Paciente</p>
+                </li>
+                <li class="splide__slide testimonio">
+                  <i class="fa-solid fa-user"></i>
+                  <p>"La consulta con doctores a través de la app es muy conveniente y útil."</p>
+                  <p>- Ana Martínez, Paciente</p>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -193,6 +197,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   </body>
 </html>

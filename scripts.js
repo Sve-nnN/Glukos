@@ -1,3 +1,14 @@
+document.addEventListener('DOMContentLoaded', function () {
+  new Splide('.testimonios', {
+    type: 'loop',
+    perPage: 3,
+    autoplay: true,
+    interval: 3000, // Tiempo entre cada scroll automático (en milisegundos)
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    gap: '1rem', // Espaciado entre slides (puedes ajustar el valor)
+  }).mount();
+});
 // Responsive navigation bar behavior
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
@@ -29,15 +40,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-// ...existing code...
-document.addEventListener('DOMContentLoaded', function () {
-  new Splide('.testimonios', {
-    type: 'loop',
-    perPage: 3,
-    autoplay: true,
-    interval: 3000, // Tiempo entre cada scroll automático (en milisegundos)
-    pauseOnHover: false,
-    pauseOnFocus: false,
-  }).mount();
-});
-// ...existing code...
