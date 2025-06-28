@@ -1,8 +1,8 @@
-# Vitalance – Aplicación Integral de Prevención y Control para Personas Diabéticas
+# Glukos – Aplicación Integral de Prevención y Control para Personas Diabéticas
 
 ## 📋 Descripción del Proyecto
 
-Vitalance es una solución tecnológica desarrollada como parte del curso de **Interacción Humano-Computadora (IHC)**. El proyecto busca mejorar la calidad de vida de las personas diagnosticadas con diabetes tipo 1 y tipo 2, facilitando el monitoreo de su salud y fortaleciendo la interacción con el personal médico. 
+Glukos es una solución tecnológica desarrollada como parte del curso de **Interacción Humano-Computadora (IHC)**. El proyecto busca mejorar la calidad de vida de las personas diagnosticadas con diabetes tipo 1 y tipo 2, facilitando el monitoreo de su salud y fortaleciendo la interacción con el personal médico. 
 
 A través de una **landing page** y una **aplicación móvil**, ofrecemos herramientas accesibles, intuitivas y con enfoque predictivo que empoderan a los usuarios para tomar el control de su salud.
 
